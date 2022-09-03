@@ -1,12 +1,12 @@
 bl_info = {
     "name": "Batch Rename Vertex Groups",
-    "author": "BlenderBoi",
-    "version": (1, 0),
+    "author": "BlenderBoi, iJacques",
+    "version": (1, 1),
     "blender": (2, 80, 0),
     "location": "View3D > Object > Batch Rename Vertex Groups",
-    "description": "Batch Rename Vertex Groups",
+    "description": "Allows you to batch batch rename vertex groups, perfect for when you mess up vertex group or bone naming conventions! Lock vertex groups to exclude them from being renamed",
     "warning": "",
-    "doc_url": "",
+    "doc_url": "https://github.com/BlenderBoi/Batch_Rename_Vertex_Groups",
     "category": "Vertex Group",
 }
 
@@ -60,13 +60,25 @@ class Batch_Rename_Vertex_Groups(bpy.types.Operator):
         
         for vertex_group in object.vertex_groups:
             if self.Mode == "PREFIX":
-                vertex_group.name = self.Name01 + vertex_group.name
+                if vertex_group.lock_weight == False:
+                    vertex_group.name = self.Name01 + vertex_group.name
+                else: 
+                    continue
             if self.Mode == "SUFFIX":
-                vertex_group.name = vertex_group.name + self.Name01
+                if vertex_group.lock_weight == False:
+                    vertex_group.name = vertex_group.name + self.Name01
+                else: 
+                    continue
             if self.Mode == "REMOVE":
-                vertex_group.name = vertex_group.name.replace(self.Name01, "")
+                if vertex_group.lock_weight == False:
+                    vertex_group.name = vertex_group.name.replace(self.Name01, "")
+                else: 
+                    continue
             if self.Mode == "REPLACE":
-                vertex_group.name = vertex_group.name.replace(self.Name01, self.Name02)
+                if vertex_group.lock_weight == False:
+                    vertex_group.name = vertex_group.name.replace(self.Name01, self.Name02)
+                else: 
+                    continue
         
         return {'FINISHED'}
 
