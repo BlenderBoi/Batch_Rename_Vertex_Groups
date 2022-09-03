@@ -59,26 +59,16 @@ class Batch_Rename_Vertex_Groups(bpy.types.Operator):
         object = context.object
         
         for vertex_group in object.vertex_groups:
+            if vertex_group.lock_weight:
+                    continue
             if self.Mode == "PREFIX":
-                if vertex_group.lock_weight == False:
-                    vertex_group.name = self.Name01 + vertex_group.name
-                else: 
-                    continue
+                vertex_group.name = self.Name01 + vertex_group.name
             if self.Mode == "SUFFIX":
-                if vertex_group.lock_weight == False:
-                    vertex_group.name = vertex_group.name + self.Name01
-                else: 
-                    continue
+                vertex_group.name = vertex_group.name + self.Name01    
             if self.Mode == "REMOVE":
-                if vertex_group.lock_weight == False:
-                    vertex_group.name = vertex_group.name.replace(self.Name01, "")
-                else: 
-                    continue
+                vertex_group.name = vertex_group.name.replace(self.Name01, "")
             if self.Mode == "REPLACE":
-                if vertex_group.lock_weight == False:
-                    vertex_group.name = vertex_group.name.replace(self.Name01, self.Name02)
-                else: 
-                    continue
+                vertex_group.name = vertex_group.name.replace(self.Name01, self.Name02)
         
         return {'FINISHED'}
 
