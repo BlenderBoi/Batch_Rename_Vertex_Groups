@@ -1,11 +1,9 @@
 # Description 
----
 
 This add-on allows you to batch rename vertex groups, perfect for when you mess up vertex group or bone naming conventions!
 
 ---
 # Features
----
 
 ## Main Functions
 
@@ -27,11 +25,11 @@ To exclude specific vertex groups, simply lock the group in the object data prop
 
 ---
 # Changes
----
 
 ## Version 1.0
 Initial release by BlenderBoi
 
 ## Version 1.1
 Feature added by iJacques
+Feature optimization by SaulDoesCode
 > Exclude locked vertex groups
