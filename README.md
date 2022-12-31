@@ -1,4 +1,4 @@
-# Description 
+#  Batch Rename Vertex Groups
 
 ![Batch Rename Vertex Groups Menu](https://blenderboi.com/gallery/BatchRenameVertexGroups/BatchRenameVertexGroupMenu.png)
 
