@@ -1,5 +1,7 @@
 # Description 
 
+![Batch Rename Vertex Groups Menu](https://blenderboi.com/gallery/BatchRenameVertexGroups/BatchRenameVertexGroupMenu.png)
+
 This add-on allows you to batch rename vertex groups, perfect for when you mess up vertex group or bone naming conventions!
 
 ---
@@ -7,7 +9,9 @@ This add-on allows you to batch rename vertex groups, perfect for when you mess 
 
 ## Main Functions
 
-This add-on has 4 operators:
+![Batch Rename Vertex Groups Settings](https://blenderboi.com/gallery/BatchRenameVertexGroups/BatchRenameVertexGroupSettings.png)
+
+This add-on has 4 settings:
 
 - Prefix
 > Adds text to the beginning of the vertex group name(s)
